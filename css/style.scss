@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+$cl--dark-desaturated-blue: hsl(238, 29%, 16%);
+$cl--soft-red: hsl(14, 88%, 65%);
+$cl--very-dark-grayish-blue: hsl(237, 12%, 33%);
+$cl--dark-grayish-blue: hsl(240, 6%, 50%);
+$cl--light-grayish-blue: hsl(240, 5%, 91%);
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  font-size: 62.5%;
+}
+main {
+  background-image: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+
+  .wrapper {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    //   justify-items: center;
+
+    font-size: 1.2rem;
+    width: 80%;
+    margin: auto auto;
+
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    padding: 2rem;
+
+    // position: relative;
+
+    .hero-img {
+      img:nth-child(1) {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        // top: 0;
+        // right: 0;
+        transform: translate(-50%, -50%);
+
+        // top: 0;
+        // left: 50%;
+      }
+      img:nth-child(2) {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        // top: 0;
+        // right: 0;
+        transform: translate(-45%, -0%);
+
+        // top: 0;
+        // left: 50%;
+      }
+      img:nth-child(3) {
+        display: none;
+      }
+      .img-box {
+        display: none;
+      }
+    }
+
+    h1 {
+      text-align: center;
+    }
+    .faq-main {
+      margin-top: 4rem;
+      margin-bottom: 3rem;
+      section {
+        border-bottom: 1px solid $cl--light-grayish-blue;
+      }
+
+      .q-wrapper--main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 0;
+        z-index: 99;
+        cursor: pointer;
+        h5 {
+          font-weight: 400;
+          transition: all 0.5s ease;
+          &:hover {
+            color: $cl--soft-red;
+          }
+        }
+      }
+      .q-wrapper-sub {
+        display: none;
+        font-size: 1rem;
+        padding-bottom: 1.5rem;
+        // z-index: -1;
+        // background-color: red;
+        // transform: translateY(-100%);
+      }
+      .active > .q-wrapper-sub {
+        display: block;
+        transition: all 0.3s ease-in;
+      }
+      .active img {
+        transform: rotate(180deg);
+        transition: all 0.3s ease-in;
+      }
+      .active h5 {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  main {
+    .wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 2rem 2rem 0 0;
+
+      header {
+        grid-column: 1/2;
+        background-image: url("../images/illustration-woman-online-desktop.svg");
+        background-position: top 10px left -83px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: relative;
+
+        .hero-img {
+          img:nth-child(1),
+          img:nth-child(2) {
+            display: none;
+          }
+          //   .bg-pattern-d {
+          //     display: block;
+          //     width: 10%;
+          //     // max-width: 400px;
+          //     // height: auto;
+          //   }
+          .img-box {
+            position: absolute;
+            top: 220px;
+            left: -100px;
+            display: block;
+            z-index: 9999;
+          }
+        }
+      }
+    }
+  }
+}
